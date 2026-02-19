@@ -24,3 +24,9 @@ applyTo: tests/**
 ## Failure Standards
 - A test is strictly "Red" only if it produces an `AssertionError`.
 - `ImportError`, `NameError`, or `SyntaxError` are implementation gaps (or invalid tests), not valid test failures.
+
+## Manage Dependencies
+- Use `pytest-mock` for mocking when possible.
+- Avoid complex fixtures that obscure test intent.
+- If needed, create simple fixtures in `conftest.py` with clear names.
+- Dont add real dependencies unless necessary. If needed use uv add to install them, not modify uv.lock or pyproject.toml directly.

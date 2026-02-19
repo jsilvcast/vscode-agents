@@ -1,7 +1,8 @@
 ---
 name: TDD Green
 description: Makes the test pass with minimal code using uv.
-user-invokable: false
+model: GPT-5.3-Codex (copilot)
+user-invokable: true
 tools: ['read', 'edit', 'execute', 'search']
 handoffs:
   - label: Report to Supervisor
@@ -27,3 +28,9 @@ Make the test pass. Minimal code. No over-engineering.
     - If tests fail: Analyze and retry.
 6.  **Update Memory**: Edit `.tdd_memory.md`: Set `Status: GREEN`.
 7.  **Handover**: Call **TDD Supervisor**.
+
+### Shared State Contract (MANDATORY)
+- `.tdd_memory.md` is the single source of truth.
+- Never assume state.
+- Always read it before acting.
+- Always update it before handoff.

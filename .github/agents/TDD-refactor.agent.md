@@ -1,7 +1,8 @@
 ---
 name: TDD Refactor
 description: Optimizes code and ensures static analysis compliance with Ruff.
-user-invokable: false
+model: Claude Opus 4.6 (copilot)
+user-invokable: true
 tools: ['read', 'edit', 'execute', 'search']
 handoffs:
   - label: Cycle Complete
@@ -29,3 +30,9 @@ Refactor for readability, DRY, and strict static analysis compliance.
     - **CRITICAL**: If tests fail, UNDO immediately.
 6.  **Update Memory**: Edit `.tdd_memory.md`: Set `Status: COMPLETE`.
 7.  **Handover**: Call **TDD Supervisor**.
+
+### Shared State Contract (MANDATORY)
+- `.tdd_memory.md` is the single source of truth.
+- Never assume state.
+- Always read it before acting.
+- Always update it before handoff.
