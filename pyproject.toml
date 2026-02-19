@@ -8,3 +8,15 @@ dependencies = [
     "pytest>=9.0.2",
     "ruff>=0.15.1",
 ]
+
+# pyproject.toml
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+# E: pycodestyle errors, F: Pyflakes, C90: McCabe complexity
+select = ["E", "F", "C90"] 
+extend-select = ["I"] # isort
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10

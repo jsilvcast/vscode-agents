@@ -8,3 +8,6 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Copilot agents cache
+# .tdd_memory.md
